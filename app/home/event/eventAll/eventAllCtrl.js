@@ -19,7 +19,7 @@ event.controller('eventAllCtrl', ['$location','$http','$cookies','getEventsAllSe
 
 
         vm.getHour = function (date) {
-            return moment('2017-05-29T19:00:00.000').format('HH:mm');
+            return moment(date).format('HH:mm');
         };
 
 
@@ -76,8 +76,6 @@ event.controller('eventAllCtrl', ['$location','$http','$cookies','getEventsAllSe
                     let id = vm.events[i]._id ;
                     let id2 = event._id;
                     if(id == id2){
-                        console.log(vm.events[i]._id);
-                        console.log(vm.events[i]._id+" = "+ event._id);
                         vm.events[i].evt_attend = false;
                     }
                 }

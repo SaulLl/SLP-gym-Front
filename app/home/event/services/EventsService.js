@@ -37,7 +37,7 @@ function getInscriptions($resource,$cookies) {
 
     //console.log(userId);
 
-    return $resource("http://localhost:3000/api/inscription/590546b879c47c3728f5ed8b", {
+    return $resource("http://localhost:3000/api/events/590546b879c47c3728f5ed8b", {
         guery: {
             method: 'GET'
 
@@ -45,5 +45,6 @@ function getInscriptions($resource,$cookies) {
 
     });
 }
+
 
 

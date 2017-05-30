@@ -1,22 +1,46 @@
+<div ng-if="ins.myevents.length > 0">
 <div class="panel panel-default " >
     <div class="panel-heading">
         Eventos a los que asistirás
     </div>
 
 
-    <div class="panel-body">
+    <div class="panel-body" >
 
 
 
-        <table class="table" ng-table="ins.tableParams">
-            <tr ng-repeat="inscription in $data">
-                <td data-title="'Nombre'"  sortable="'evt_activity'"  class="text-center" header-class="'text-center'">
-                    {{inscription.ins_event}}
+        <table class="table" ng-table="ins.tableParams" >
+            <tr ng-repeat="inscription in $data" ng-if="inscription.evt_attend">
+               <td data-title="'Nombre'"  sortable="'evt_activityfilter'"  filter="{evt_activityfilter : 'text'}" class="text-center" header-class="'text-center'">
+                    {{inscription.evt_activityfilter}}
+                </td>
+                <td data-title="'Fecha'"  sortable="'evt_datefilter'"  filter="{evt_datefilter : 'text'}" class="text-center" header-class="'text-center'">
+                    {{inscription.evt_datefilter}}
+                </td>
+                <td data-title="'Hora'"  sortable="'evt_hourfilter'"  filter="{evt_hourfilter : 'text'}" class="text-center" header-class="'text-center'">
+                    {{inscription.evt_hourfilter}}
+                </td>
+
+                <td>
+                    <div class="btn btn-danger" ng-click="ins.noAttend(inscription)" >Cancelar</div>
                 </td>
 
             </tr>
 
 
         </table>
+    </div>
+</div>
+</div>
+
+<div ng-if="ins.myevents.length <= 0">
+    <div class="panel panel-default ">
+        <div class="panel-heading">
+            No se encontraros Eventos
+        </div>
+        <div class="panel-body" >
+            Actualmente no estas inscrito a ningun evento. Para consultar los eventos disponibles utiliza la opcion <strong>Bustar eventos</strong>
+            del menú superior
+        </div>
     </div>
 </div>
