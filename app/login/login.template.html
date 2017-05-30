@@ -1,0 +1,28 @@
+<div class="panel-default panel" >
+
+    <div class="panel-heading">
+        Control de acceso
+    </div>
+
+
+    <div class="panel-body">
+
+        <form class="form-horizontal" ng-submit="loginctrl.logaccess()">
+
+        <div class="form-group">
+            <label for="loginuser">Usuario:</label>
+            <input type="text" class="form-control" id="loginuser" ng-model="loginctrl.loginuser" ng-required="true"/>
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" ng-model="loginctrl.password" ng-required="true"/>
+        </div>
+
+            <input type="submit" class="btn btn-primary " value="Acceder"/>
+
+        </form>
+
+    </div>
+
+
+</div>

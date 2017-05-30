@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="gymApp">
+<head>
+    <meta charset="UTF-8">
+
+
+    <!-- CARGO LOS ARCHIVOS NECESARIOS PARA QUE LA APLICACION FUNCIONE CORRECTAMENTE -->
+
+        <!-- Angular -->
+
+        <script src="bower_components/angular/angular.js"></script>
+
+        <!-- Jquery -->
+
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+        <!-- Bootstrap -->
+
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+
+        <!-- Moment -->
+        <script src="bower_components/moment/moment.js"></script>
+        <script src="bower_components/moment/locale/es.js"></script>
+        <script src="bower_components/moment-timezone/moment-timezone.js"></script>
+
+        <!-- NgTable -->
+
+        <script src="plugins/ng-table/ng-table.js"></script>
+
+
+
+        <!-- Angular-route -->
+
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+        <!-- Angular-resource -->
+
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+
+        <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+
+
+
+        <!--sha256-->
+        <!--la libreria sha256 la utilizo para cifrar las contraseñas-->
+        <script src="bower_components/js-sha256/src/sha256.js"></script>
+
+
+
+
+    <!-- CARGA DE LAS HOJAS DE ESTILOS -->
+
+        <!-- Bootstrap -->
+
+        <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+        <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
+
+        <!-- Ng Table -->
+
+        <link rel="stylesheet" type="text/css" href="plugins/ng-table/ng-table.css"  />
+
+
+
+
+
+        <!-- estilos de la pagina  -->
+
+        <link type="text/css" rel="stylesheet" href="webroot/css/estilosActividades.css">
+
+    <script src="home/event/services/EventsService.js"></script>
+
+        <script src="modules/gym.modules.js"></script>
+
+
+    <!-- carga del controlador del login -->
+        <script src="login/login.controller.js"></script>
+
+
+    <!-- carga del modeventAllvent-->
+        <script src="home/event/eventModule.js"></script>
+
+    <!-- carga del controlador activityToday -->
+        <script src="home/event/eventToday/eventTodayCtrl.js"></script>
+
+        <script src="home/event/eventAll/eventAllCtrl.js"></script>
+
+
+        <script src="home/event/inscriptions/inscriptions.controller.js"></script>
+
+
+
+    <title>Title</title>
+</head>
+<body>
+
+        <!--El siguiente div pertenece a la clase "container" lo que significa que es el padre de los elementos bootstrap -->
+        <div class="container">
+
+            <!-- El siguiente div pertenece a la clase ng-view por lo que gestina las vistas y plantillas de la aplicacion -->
+            <div ng-view></div>
+
+        </div>
+
+
+
+
+</body>
+</html>

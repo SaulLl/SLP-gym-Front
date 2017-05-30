@@ -1,0 +1,50 @@
+<div ng-init="tabName='activitiesToday'">
+
+
+    <nav class="navbar navbar-fixed-top">
+
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <ul class="nav navbar-nav">
+
+                    <li class="menuoption" ng-class="{'active': tabName=='activitiesToday'}" ng-click="tabName='activitiesToday'">
+                        <span class="glyphicon glyphicon-home"></span>
+                        Inicio
+                    </li>
+                    <li class="menuoption" ng-class="{'active': tabName=='searchActivity'}" ng-click="tabName='searchActivity'">
+                        <span class="glyphicon glyphicon-search"></span>
+                        Buscar Actividades
+                    </li>
+                    <li class="menuoption" ng-class="{'active': tabName=='myActivities'}" ng-click="tabName='myActivities'">Mis actividades</li>
+
+            </ul>
+
+
+    </nav>
+
+
+        <div class="text-center">
+
+
+                <div ng-switch="tabName">
+                    <div ng-switch-when="activitiesToday">
+                        <div ng-include='"/home/event/eventToday/eventTodayTemplate.html"'
+                             ng-controller="eventTodayCtrl as evtToday">
+                        </div>
+                    </div>
+                    <div ng-switch-when="searchActivity">
+                        <div ng-include='"/home/event/eventall/eventAllTemplate.html"'
+                             ng-controller="eventAllCtrl as evtAll">
+                        </div>
+                    </div>
+                    <div ng-switch-when="myActivities">
+                        <div ng-include='"/home/event/inscriptions/inscriptionsTemplate"'
+                             ng-controller="inscriptionsCtrl as ins">
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+</div>
+

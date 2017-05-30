@@ -1,0 +1,71 @@
+<div class="panel panel-default " >
+    <div class="panel-heading panel-heading-custom">
+       Listado de Eventos
+    </div>
+
+
+    <div class="panel-body">
+
+        <table class="table" ng-table="evtAll.tableParams">
+            <tr ng-repeat="event in $data " >
+                <td data-title="'Actividad'"  sortable="'evt_activity'"  filter="{evt_activityfilter : 'text'}" header-class="'text-center'">
+                    {{event.evt_activityfilter}}
+                </td>
+
+                <td data-title="'Dia'"   class="text-center"  sortable="'evt_Dia'" filter="{evt_datefilter : 'text'}"   header-class="'text-center'">
+                    {{event.evt_datefilter}}
+                </td>
+                <td data-title="'hora'"   class="text-center"  sortable="'evt_hora'" filter="{evt_hourfilter : 'text'}" header-class="'text-center'">
+                    {{event.evt_hourfilter}}
+                </td>
+
+                <td data-title="'Lugar'"   class="text-center" filter="{evt_place : 'text'}" header-class="'text-center'">
+                    {{event.evt_place}}
+                </td>
+
+                <td  class="text-center" header-class="'text-center'" >
+                    <div ng-if="!event.evt_attend" class="btn btn-info" ng-click="evtAll.attend(event)" >Asistir</div>
+                    <div ng-if="event.evt_attend" class="btn btn-danger" ng-click="evtAll.noAttend(event)" >No asistir</div>
+                </td>
+
+
+                <td>
+                    <a class="btn btn-info" title="Información" ng-click="evtAll.openDetail(event.evt_activity)" >
+                        <span class="glyphicon glyphicon-info-sign"></span>
+                    </a>
+                </td>
+
+
+            </tr>
+
+
+        </table>
+    </div>
+</div>
+
+<script type="text/ng-template" id="eventActivity.html">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" ng-click="modAct.modalclose">&times;</button>
+                <h5 class="modal-title">Detalles de {{modAct.activity.act_name}}</h5>
+            </div>
+            <div class="modal-body">
+
+                Descripción
+                <div class="well">
+                    {{modAct.activity.act_description}}
+                </div>
+
+                Intensidad
+                <div class="well">
+                    {{modAct.activity.act_intensy}}
+                </div>
+                Duración
+                <div class="well">
+                    {{modAct.activity.act_duration}} minutos
+                </div>
+
+            </div>
+        </div>
+
+</script>

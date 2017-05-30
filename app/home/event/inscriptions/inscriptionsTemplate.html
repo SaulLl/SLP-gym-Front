@@ -1,0 +1,22 @@
+<div class="panel panel-default " >
+    <div class="panel-heading">
+        Eventos a los que asistirás
+    </div>
+
+
+    <div class="panel-body">
+
+
+
+        <table class="table" ng-table="ins.tableParams">
+            <tr ng-repeat="inscription in $data">
+                <td data-title="'Nombre'"  sortable="'evt_activity'"  class="text-center" header-class="'text-center'">
+                    {{inscription.ins_event}}
+                </td>
+
+            </tr>
+
+
+        </table>
+    </div>
+</div>

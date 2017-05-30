@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-md-3 well">
+
+        <div  class="img-circle " style="height:100px;width:100px; margin:0 auto;background-color:#003380" >
+            <span class="glyphicon glyphicon-user" style="font-size:60px;color:white; line-height:100px;"></span>
+        </div>
+    </div>
+
+    <div class="col-md-9">
+        <div class="panel panel-default " >
+            <div class="panel-heading panel-heading-custom">
+                Proximos eventos
+            </div>
+
+
+            <div class="panel-body">
+
+
+
+                <table class="table" ng-table="evtToday.tableParams">
+                    <tr ng-repeat="event in $data">
+
+                        <td data-title="'Actividad'"  sortable="'evt_activity'"  class="text-center" header-class="'text-center'">
+                            {{event.evt_activity.act_name}}
+                        </td>
+
+                        <td data-title="'Dia'"   class="text-center"  sortable="'evt_day'" header-class="'text-center'">
+                            {{evtToday.getDay(event.evt_date)}}
+                        </td>
+
+                        <td data-title="'hora'"   class="text-center"  sortable="'evt_day'" header-class="'text-center'">
+                            {{evtToday.getHour(event.evt_date)}}
+                        </td>
+
+                        <td data-title="'Lugar'"   class="text-center" header-class="'text-center'">
+                            {{event.evt_place}}
+                        </td>
+
+
+                        <td  class="text-center" header-class="'text-center'">
+                            <div class="btn btn-info" ng-click="evtToday.attend(event)">Asistir</div>
+                        </td>
+
+
+                        <td>
+                            <a class="btn btn-info" ng-click="evtToday.openDetail(event.evt_activity)" >
+                                <span class="glyphicon glyphicon-info-sign"></span> Información
+                            </a>
+                        </td>
+
+
+                    </tr>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
